@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 namespace CoreCodeCamp.Data {
     public class CampProfile : Profile{
         public CampProfile() {
-            this.CreateMap<Camp, CampModel>();
+            this.CreateMap<Camp, CampModel>()
+                .ForMember(e => e.Venue, o => o.MapFrom(c => c.Location.VenueName));
         }
     }
 }
