@@ -16,7 +16,7 @@ using Microsoft.Extensions.Options;
 
 namespace CoreCodeCamp {
     public class Startup {
-        public void ConfigureServices(IServiceCollection services) {
+        public void ConfigureServices(IServiceCollection services) {//Configuração de serviços
             services.AddDbContext<CampContext>();
             services.AddScoped<ICampRepository, CampRepository>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
@@ -24,7 +24,7 @@ namespace CoreCodeCamp {
             services.AddControllers();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {//Configuração de pipeline de middlewares
             if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             }
